@@ -339,6 +339,47 @@
     <span class="next" onclick="plusSlides(1, 'paintings')">&#10095;</span>
 </div>
 
+<!-- Custom CSS for better modal functionality -->
+<style>
+    /* Modal content images */
+    .modal-content img {
+        width: auto; /* Automatically adjusts width */
+        max-width: 100%; /* Limits width to container width */
+        max-height: 90vh; /* Prevents the image from exceeding 90% of the viewport height */
+        object-fit: contain; /* Ensures the image fits within the container */
+        margin: auto;
+        display: block; /* Ensures images are displayed block-level */
+    }
+
+    /* Hide all slides initially */
+    .mySlides {
+        display: none;
+    }
+
+    /* Navigation buttons */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        padding: 16px;
+        font-size: 18px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: none;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .prev {
+        left: 0;
+        border-radius: 3px;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px;
+    }
+</style>
+
 
 <style>
     /* Modal styling to make it responsive */
