@@ -312,15 +312,15 @@
     <button class="close-btn" onclick="closeModal('project3')">&times;</button>
     <span class="prev" onclick="plusSlides(-1, 'project3')">&#10094;</span>
     <div class="modal-content">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_21.jpg" alt="Project 3 Image 1">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_22.jpg" alt="Project 3 Image 2">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_23.jpg" alt="Project 3 Image 3">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_24.jpg" alt="Project 3 Image 4">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_25.jpg" alt="Project 3 Image 5">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_26.jpg" alt="Project 3 Image 6">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_27.jpg" alt="Project 3 Image 7">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_28.jpg" alt="Project 3 Image 8">
-        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_29.jpg" alt="Project 3 Image 9">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_21.jpg" alt="Project 3 Image 1">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_22.jpg" alt="Project 3 Image 2">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_23.jpg" alt="Project 3 Image 3">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_24.jpg" alt="Project 3 Image 4">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_25.jpg" alt="Project 3 Image 5">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_26.jpg" alt="Project 3 Image 6">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_27.jpg" alt="Project 3 Image 7">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_28.jpg" alt="Project 3 Image 8">
+        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_29.jpg" alt="Project 3 Image 9">
     </div>
     <span class="next" onclick="plusSlides(1, 'project3')">&#10095;</span>
 </div>
@@ -338,6 +338,7 @@
     </div>
     <span class="next" onclick="plusSlides(1, 'paintings')">&#10095;</span>
 </div>
+
 
 <style>
     /* Modal styling to make it responsive */
@@ -450,6 +451,36 @@
 </style>
 
 <script>
+    // Ensure the homepage is displayed and modals are hidden by default when the page loads
+window.onload = function () {
+    // Hide all images initially
+    var allImages = document.querySelectorAll('img');
+    allImages.forEach(function(image) {
+        image.style.display = "none"; // Hide images on page load
+    });
+
+    // Once page has fully loaded, show the images
+    setTimeout(function() {
+        allImages.forEach(function(image) {
+            image.style.display = "block"; // Show images after page load
+        });
+    }, 500);  // Allow 500ms for the images to load
+};
+
+// Open a modal when clicking on a project
+function openModal(project) {
+    // Hide homepage and show the corresponding project modal
+    document.querySelector('.homepage').style.display = "none";
+    document.getElementById(`myModal-${project}`).style.display = "block";
+    showSlides(slideIndex[project], project);
+}
+
+// Close the modal and show the homepage again
+function closeModal(project) {
+    document.querySelector('.homepage').style.display = "flex"; // Show homepage
+    document.getElementById(`myModal-${project}`).style.display = "none"; // Hide modal
+}
+    
     // JavaScript for modal and slides logic
     var slideIndex = {
         paintings: 1
