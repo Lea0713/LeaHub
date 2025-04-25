@@ -19,7 +19,7 @@
 
         .homepage {
             height: 100vh;
-            background-image: url('Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_21.jpg'); /* Background image for portfolio */
+            background-image: url('your-image-url.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -101,8 +101,6 @@
             font-size: 1.5em;
             text-transform: uppercase;
             cursor: pointer;
-            background-size: cover;
-            background-position: center;
         }
 
         .project:hover {
@@ -135,17 +133,13 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .modal-content {
             margin: auto;
             display: block;
-            width: 90%;
+            width: 80%;
             max-width: 1200px;
-            height: auto;
         }
 
         .prev, .next {
@@ -170,6 +164,7 @@
             border-radius: 3px;
         }
 
+        /* Close Button */
         .close-btn {
             position: absolute;
             top: 20px;
@@ -180,53 +175,6 @@
             border: none;
             cursor: pointer;
         }
-
-        /* Modal content images */
-        .modal-content img {
-            width: auto;
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-            margin: auto;
-            display: block;
-        }
-
-        /* Project covers in Portfolio section */
-        .project {
-            width: 300px;
-            height: 200px;
-            background-color: #333333;
-            color: #FFFFFF;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5em;
-            text-transform: uppercase;
-            cursor: pointer;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .project:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        /* Ensure the images are contained within the container and reset positions between slides */
-        .mySlides {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .modal-content img {
-                width: 100%;
-                height: auto;
-            }
-
-            .project {
-                width: 90%;
-                height: 150px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -234,7 +182,7 @@
     <!-- Homepage -->
     <div class="homepage">
         <h1>Léa's Portfolio</h1>
-        <h2>Architect | Designer | Researcher</h2>
+        <h2>Architect | Designer | Thinker</h2>
     </div>
 
     <!-- Navigation Menu -->
@@ -268,41 +216,46 @@
         </ul>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio">
-            <div class="project" onclick="openModal('project1');currentSlide(1, 'project1')" style="background-image: url('Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_01.jpg');">
+<!-- Portfolio Section -->
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio">
+        <!-- Project 1 -->
+        <div class="project" onclick="openModal('project1');currentSlide(1, 'project1')" style="background-image: url('Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_01.jpg');">
                 Project 1
             </div>
 
-            <div class="project" onclick="openModal('project2');currentSlide(1, 'project2')" style="background-image: url('Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_09.jpg');">
+        <!-- Project 2 -->
+        <div class="project" onclick="openModal('project2');currentSlide(1, 'project2')" style="background-image: url('Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_09.jpg');">
                 Project 2
             </div>
 
-            <div class="project" onclick="openModal('project3');currentSlide(1, 'project3')" style="background-image: url('Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_21.jpg');">
+        <!-- Project 3 -->
+        <div class="project" onclick="openModal('project3');currentSlide(1, 'project3')" style="background-image: url('Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_21.jpg');">
                 Project 3
             </div>
 
-            <div class="project" onclick="openModal('paintings');currentSlide(1, 'paintings')" style="background-image: url('LI-artworks_00.jpg');">
+        <!-- Paintings -->
+        <div class="project" onclick="openModal('paintings');currentSlide(1, 'paintings')" style="background-image: url('LI-artworks_00.jpg');">
                 Paintings
             </div>
         </div>
-    </section>
+</section>
+
 
 <!-- Modal for Project 1 -->
 <div id="myModal-project1" class="modal">
     <button class="close-btn" onclick="closeModal('project1')">&times;</button>
     <span class="prev" onclick="plusSlides(-1, 'project1')">&#10094;</span>
     <div class="modal-content">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_01.jpg" alt="Project 1 Image 1">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_02.jpg" alt="Project 1 Image 2">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_03.jpg" alt="Project 1 Image 3">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_04.jpg" alt="Project 1 Image 4">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_05.jpg" alt="Project 1 Image 5">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_06.jpg" alt="Project 1 Image 6">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_07.jpg" alt="Project 1 Image 7">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_08.jpg" alt="Project 1 Image 8">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_01.jpg" alt="Project 1 Image 1">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_02.jpg" alt="Project 1 Image 2">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_03.jpg" alt="Project 1 Image 3">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_04.jpg" alt="Project 1 Image 4">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_05.jpg" alt="Project 1 Image 5">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_06.jpg" alt="Project 1 Image 6">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_07.jpg" alt="Project 1 Image 7">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_08.jpg" alt="Project 1 Image 8">
     </div>
     <span class="next" onclick="plusSlides(1, 'project1')">&#10095;</span>
 </div>
@@ -312,17 +265,17 @@
     <button class="close-btn" onclick="closeModal('project2')">&times;</button>
     <span class="prev" onclick="plusSlides(-1, 'project2')">&#10094;</span>
     <div class="modal-content">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_09.jpg" alt="Project 2 Image 1">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_10.jpg" alt="Project 2 Image 2">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_11.jpg" alt="Project 2 Image 3">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_12.jpg" alt="Project 2 Image 4">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_13.jpg" alt="Project 2 Image 5">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_14.jpg" alt="Project 2 Image 6">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_15.jpg" alt="Project 2 Image 7">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_16.jpg" alt="Project 2 Image 8">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_17.jpg" alt="Project 2 Image 9">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_18.jpg" alt="Project 2 Image 10">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_19.jpg" alt="Project 2 Image 11">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_09.jpg" alt="Project 2 Image 1">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_10.jpg" alt="Project 2 Image 2">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_11.jpg" alt="Project 2 Image 3">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_12.jpg" alt="Project 2 Image 4">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_13.jpg" alt="Project 2 Image 5">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_14.jpg" alt="Project 2 Image 6">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_15.jpg" alt="Project 2 Image 7">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_16.jpg" alt="Project 2 Image 8">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_17.jpg" alt="Project 2 Image 9">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_18.jpg" alt="Project 2 Image 10">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_19.jpg" alt="Project 2 Image 11">
     </div>
     <span class="next" onclick="plusSlides(1, 'project2')">&#10095;</span>
 </div>
@@ -332,33 +285,186 @@
     <button class="close-btn" onclick="closeModal('project3')">&times;</button>
     <span class="prev" onclick="plusSlides(-1, 'project3')">&#10094;</span>
     <div class="modal-content">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_21.jpg" alt="Project 3 Image 1">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_22.jpg" alt="Project 3 Image 2">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_23.jpg" alt="Project 3 Image 3">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_24.jpg" alt="Project 3 Image 4">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_25.jpg" alt="Project 3 Image 5">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_26.jpg" alt="Project 3 Image 6">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_27.jpg" alt="Project 3 Image 7">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_28.jpg" alt="Project 3 Image 8">
-        <img class="mySlides" src="Architecture%20Portfolio%20-%20Yuhan%20Li%20Lea_29.jpg" alt="Project 3 Image 9">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_21.jpg" alt="Project 3 Image 1">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_22.jpg" alt="Project 3 Image 2">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_23.jpg" alt="Project 3 Image 3">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_24.jpg" alt="Project 3 Image 4">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_25.jpg" alt="Project 3 Image 5">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_26.jpg" alt="Project 3 Image 6">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_27.jpg" alt="Project 3 Image 7">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_28.jpg" alt="Project 3 Image 8">
+        <img class="mySlides" src="Architecture Portfolio - Yuhan Li Lea_29.jpg" alt="Project 3 Image 9">
     </div>
     <span class="next" onclick="plusSlides(1, 'project3')">&#10095;</span>
 </div>
 
-    <!-- Modal for Paintings -->
-    <div id="myModal-paintings" class="modal">
-        <button class="close-btn" onclick="closeModal('paintings')">&times;</button>
-        <span class="prev" onclick="plusSlides(-1, 'paintings')">&#10094;</span>
-        <div class="modal-content">
-            <!-- Add your 5 images for Paintings -->
-            <img class="mySlides" src="images/Painting_01.jpg" alt="Painting 1">
-            <img class="mySlides" src="images/Painting_02.jpg" alt="Painting 2">
-            <img class="mySlides" src="images/Painting_03.jpg" alt="Painting 3">
-            <img class="mySlides" src="images/Painting_04.jpg" alt="Painting 4">
-            <img class="mySlides" src="images/Painting_05.jpg" alt="Painting 5">
-        </div>
-        <span class="next" onclick="plusSlides(1, 'paintings')">&#10095;</span>
+<!-- Modal for Paintings -->
+<div id="myModal-paintings" class="modal">
+    <button class="close-btn" onclick="closeModal('paintings')">&times;</button>
+    <span class="prev" onclick="plusSlides(-1, 'paintings')">&#10094;</span>
+    <div class="modal-content">
+        <img class="mySlides" src="LI-artworks_00.jpg" alt="Painting 1">
+        <img class="mySlides" src="LI-artworks_01.jpg" alt="Painting 2">
+        <img class="mySlides" src="LI-artworks_02.jpg" alt="Painting 3">
+        <img class="mySlides" src="LI-artworks_03.jpg" alt="Painting 4">
+        <img class="mySlides" src="LI-artworks_04.jpg" alt="Painting 5">
     </div>
+    <span class="next" onclick="plusSlides(1, 'paintings')">&#10095;</span>
+</div>
+
+<style>
+    /* Modal styling to make it responsive */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Modal content */
+    .modal-content {
+        display: block;
+        width: 90%;
+        max-width: 1200px;
+        height: auto;
+        margin: auto;
+        overflow: hidden; /* Prevents overflow of content */
+    }
+
+    /* Modal content images */
+    .modal-content img {
+        width: auto; /* Automatically adjusts width */
+        max-width: 100%; /* Limits width to container width */
+        max-height: 90vh; /* Prevents the image from exceeding 90% of the viewport height */
+        object-fit: contain; /* Ensures the image fits within the container */
+        margin: auto;
+        display: block; /* Ensures images are displayed block-level */
+    }
+
+    /* Project covers in Portfolio section */
+    .project {
+        width: 300px;
+        height: 200px;
+        background-color: #333333;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* Darken the image on hover */
+    }
+
+    /* Ensure the images are contained within the container and reset positions between slides */
+    .mySlides {
+        display: none;
+    }
+
+    /* Modal navigation buttons */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        padding: 16px;
+        font-size: 18px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: none;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .prev {
+        left: 0;
+        border-radius: 3px;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px;
+    }
+
+    /* Close button */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2em;
+        color: white;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .modal-content img {
+            width: 100%; /* Ensures images are responsive on mobile */
+            height: auto;
+        }
+
+        .project {
+            width: 90%;
+            height: 150px; /* Smaller height for mobile */
+        }
+    }
+</style>
+
+<script>
+    // JavaScript for modal and slides logic
+    var slideIndex = {
+        paintings: 1
+    };
+
+    function openModal(project) {
+        document.getElementById(`myModal-${project}`).style.display = "block";
+        showSlides(slideIndex[project], project);
+    }
+
+    function closeModal(project) {
+        document.getElementById(`myModal-${project}`).style.display = "none";
+    }
+
+    function plusSlides(n, project) {
+        showSlides(slideIndex[project] += n, project);
+    }
+
+    function currentSlide(n, project) {
+        showSlides(slideIndex[project] = n, project);
+    }
+
+    function showSlides(n, project) {
+        var slides = document.getElementsByClassName("mySlides");
+        var projectSlides = [];
+        if (project === 'paintings') {
+            projectSlides = Array.from(slides).slice(29, 35); // Paintings images from index 29 to 35
+        }
+
+        // Looping through images if the index exceeds or goes below the valid range
+        if (n > projectSlides.length) { slideIndex[project] = 1; }
+        if (n < 1) { slideIndex[project] = projectSlides.length; }
+
+        // Hide all slides
+        for (var i = 0; i < projectSlides.length; i++) {
+            projectSlides[i].style.display = "none";
+        }
+
+        // Show the current slide
+        projectSlides[slideIndex[project] - 1].style.display = "block";
+    }
+</script>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -391,11 +497,11 @@
         };
 
         function openModal(project) {
-            document.getElementById(myModal-${project}).style.display = "block";
+            document.getElementById(`myModal-${project}`).style.display = "block";
         }
 
         function closeModal(project) {
-            document.getElementById(myModal-${project}).style.display = "none";
+            document.getElementById(`myModal-${project}`).style.display = "none";
         }
 
         function plusSlides(n, project) {
@@ -443,14 +549,14 @@
     function openModal(project) {
         // Hide homepage and show the corresponding project modal
         document.querySelector('.homepage').style.display = "none";
-        document.getElementById(myModal-${project}).style.display = "block";
+        document.getElementById(`myModal-${project}`).style.display = "block";
         showSlides(slideIndex[project], project);
     }
 
     // Close the modal and show the homepage again
     function closeModal(project) {
         document.querySelector('.homepage').style.display = "flex"; // Show homepage
-        document.getElementById(myModal-${project}).style.display = "none"; // Hide modal
+        document.getElementById(`myModal-${project}`).style.display = "none"; // Hide modal
     }
 
     // JavaScript for managing the slides within the modal
