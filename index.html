@@ -136,11 +136,25 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
 
-        .modal-content {
-            margin: auto;
-            display: block;
+.modal-content {
             width: 80%;
             max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .modal-content img {
+            width: 100%;  /* Ensure the image fills the container's width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 90vh; /* Make sure the image doesn't exceed 90% of the viewport height */
+            object-fit: contain; /* Ensure images are contained within the modal */
+            margin: auto;
+            display: block; /* Center image inside the container */
+        }
+
         }
 
         .prev, .next {
@@ -175,6 +189,18 @@
             background: transparent;
             border: none;
             cursor: pointer;
+        }
+        
+         @media (max-width: 768px) {
+            .modal-content img {
+                width: 100%; /* Ensure images are responsive on mobile */
+                height: auto;
+            }
+
+            .project {
+                width: 90%;
+                height: 150px; /* Smaller height for mobile */
+            }
         }
     </style>
 </head>
