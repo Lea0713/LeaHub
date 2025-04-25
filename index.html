@@ -345,24 +345,159 @@
     <span class="next" onclick="plusSlides(1, 'project3')">&#10095;</span>
 </div>
 
-<!-- Modal for Paintings -->
-<div id="myModal-paintings" class="modal">
-    <button class="close-btn" onclick="closeModal('paintings')">&times;</button>
-    <span class="prev" onclick="plusSlides(-1, 'paintings')">&#10094;</span>
-    <div class="modal-content">
-        <img class="mySlides" src="LI-artworks_00.jpg" alt="Painting 1">
-        <img class="mySlides" src="LI-artworks_01.jpg" alt="Painting 2">
-        <img class="mySlides" src="LI-artworks_02.jpg" alt="Painting 3">
-        <img class="mySlides" src="LI-artworks_03.jpg" alt="Painting 4">
-        <img class="mySlides" src="LI-artworks_04.jpg" alt="Painting 5">
+    <!-- Modal for Paintings -->
+    <div id="myModal-paintings" class="modal">
+        <button class="close-btn" onclick="closeModal('paintings')">&times;</button>
+        <span class="prev" onclick="plusSlides(-1, 'paintings')">&#10094;</span>
+        <div class="modal-content">
+            <!-- Add your 5 images for Paintings -->
+            <img class="mySlides" src="images/Painting_01.jpg" alt="Painting 1">
+            <img class="mySlides" src="images/Painting_02.jpg" alt="Painting 2">
+            <img class="mySlides" src="images/Painting_03.jpg" alt="Painting 3">
+            <img class="mySlides" src="images/Painting_04.jpg" alt="Painting 4">
+            <img class="mySlides" src="images/Painting_05.jpg" alt="Painting 5">
+        </div>
+        <span class="next" onclick="plusSlides(1, 'paintings')">&#10095;</span>
     </div>
-    <span class="next" onclick="plusSlides(1, 'paintings')">&#10095;</span>
-</div>
 
-<script>
-// JavaScript code for opening, closing modals, and controlling the slides (unchanged)
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: liyuhan20@tsinghua.org.cn</p>
+        <p>Phone: +86 15129656679</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Léa's Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scroll to sections when clicking on the menu
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        var slideIndex = {
+            project1: 1,
+            project2: 1,
+            project3: 1,
+            paintings: 1
+        };
+
+        function openModal(project) {
+            document.getElementById(myModal-${project}).style.display = "block";
+        }
+
+        function closeModal(project) {
+            document.getElementById(myModal-${project}).style.display = "none";
+        }
+
+        function plusSlides(n, project) {
+            showSlides(slideIndex[project] += n, project);
+        }
+
+        function currentSlide(n, project) {
+            showSlides(slideIndex[project] = n, project);
+        }
+
+        function showSlides(n, project) {
+            var slides = document.getElementsByClassName("mySlides");
+            var projectSlides = [];
+            if (project === 'project1') {
+                projectSlides = Array.from(slides).slice(0, 9);
+            } else if (project === 'project2') {
+                projectSlides = Array.from(slides).slice(9, 21);
+            } else if (project === 'project3') {
+                projectSlides = Array.from(slides).slice(21, 30);
+            } else if (project === 'paintings') {
+                projectSlides = Array.from(slides).slice(30, 35);
+            }
+            if (n > projectSlides.length) { slideIndex[project] = 1 }
+            if (n < 1) { slideIndex[project] = projectSlides.length }
+            for (var i = 0; i < projectSlides.length; i++) {
+                projectSlides[i].style.display = "none";
+            }
+            projectSlides[slideIndex[project] - 1].style.display = "block";
+        }
+    </script>
+    <script>
+    // Ensure the homepage is displayed and modals are hidden by default when the page loads
+    window.onload = function () {
+        // Ensure the modal is hidden when the page loads
+        var modals = document.querySelectorAll('.modal');
+        modals.forEach(function(modal) {
+            modal.style.display = "none"; // Ensure modals are hidden
+        });
+
+        // Make sure homepage is visible
+        document.querySelector('.homepage').style.display = "flex"; // Show homepage
+    };
+
+    // Open a modal when clicking on a project
+    function openModal(project) {
+        // Hide homepage and show the corresponding project modal
+        document.querySelector('.homepage').style.display = "none";
+        document.getElementById(myModal-${project}).style.display = "block";
+        showSlides(slideIndex[project], project);
+    }
+
+    // Close the modal and show the homepage again
+    function closeModal(project) {
+        document.querySelector('.homepage').style.display = "flex"; // Show homepage
+        document.getElementById(myModal-${project}).style.display = "none"; // Hide modal
+    }
+
+    // JavaScript for managing the slides within the modal
+    var slideIndex = {
+        project1: 1,
+        project2: 1,
+        project3: 1,
+        paintings: 1
+    };
+
+    // Change slide
+    function plusSlides(n, project) {
+        showSlides(slideIndex[project] += n, project);
+    }
+
+    // Show a specific slide
+    function currentSlide(n, project) {
+        showSlides(slideIndex[project] = n, project);
+    }
+
+    // Show slides for a specific project
+    function showSlides(n, project) {
+        var slides = document.getElementsByClassName("mySlides");
+        var projectSlides = [];
+        if (project === 'project1') {
+            projectSlides = Array.from(slides).slice(0, 9); // Project 1 has images from index 0 to 8
+        } else if (project === 'project2') {
+            projectSlides = Array.from(slides).slice(9, 20); // Project 2 has images from index 9 to 19
+        } else if (project === 'project3') {
+            projectSlides = Array.from(slides).slice(20, 29); // Project 3 has images from index 20 to 28
+        } else if (project === 'paintings') {
+            projectSlides = Array.from(slides).slice(29, 34); // Paintings images from index 29 to 33
+        }
+
+        // Looping through images if the index exceeds or goes below the valid range
+        if (n > projectSlides.length) { slideIndex[project] = 1; }
+        if (n < 1) { slideIndex[project] = projectSlides.length; }
+
+        // Hide all slides
+        for (var i = 0; i < projectSlides.length; i++) {
+            projectSlides[i].style.display = "none";
+        }
+
+        // Show the current slide
+        projectSlides[slideIndex[project] - 1].style.display = "block";
+    }
 </script>
 
 </body>
 </html>
-
